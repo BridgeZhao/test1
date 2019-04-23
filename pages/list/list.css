@@ -1,0 +1,67 @@
+/**
+ * @file swan index apiDemo's css
+ * @author renzhonghua
+ */
+
+.group {
+    font-size: .15rem;
+    padding: 0 0.12rem;
+    background: #ffffff;
+}
+.list {
+    padding: 0.15rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+.list-img{
+    max-width: 1.2rem;
+    height: 0.8rem;
+}
+.list-text{
+    padding-left: 0.1rem;
+    height: 0.8rem;
+}
+.list .list_name ,.list .list_p ,.list .list_number,.list .list_money{
+    display: inline-block;
+}
+.list .list_name{
+    height: 0.16rem;
+    line-height: 0.16rem;
+    font-size: .14rem;
+    color: #000000;
+    font-weight: 400;
+    margin-top: 0.05rem;
+}
+.list .list_p{
+    font-size: .13rem;
+    width: 100%;
+    height: 0.13rem;
+    line-height: 0.13rem;
+    color: #777777;
+    overflow: hidden;
+   margin-top: 0.05rem;
+}
+.list .list_number{
+    font-size: .13rem;
+    width: 100%;
+    height: 0.13rem;
+    line-height: 0.13rem;
+    color: #777777;
+    overflow: hidden;
+    margin-top: 0.05rem;
+}
+.list .list_money{
+    height: 0.16rem;
+    line-height: 0.16rem;
+    font-size: .14rem;
+    color: #ff5722;
+    padding-top: 0.12rem;
+    display: inline;
+}
+.view-more{
+    text-align: center;
+    padding: 0.1rem 0;
+}

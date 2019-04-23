@@ -1,0 +1,14 @@
+<view class="group"> 
+    <view s-for="item, index in items" class="list"  bind:tap="oneItemClick" data-index="{{index}}" data-id="{{item.id}}">
+        <image class="list-img" src="https://img.168jm.cn/{{item.logo}}"></image>
+        <view class="list-text">
+            <text class="list_name">{{item.name}}</text>
+            <text class="list_p">{{item.company}}</text>
+            <text class="list_number">门店数量{{item.shop_number}}家</text>
+            <text class="list_money">{{item.invest_money}}</text>
+        </view>
+    </view>
+    <view class="view-more" bindtap="loadMore" dataPage="1">
+        点击加载更多
+    </view>
+</view>

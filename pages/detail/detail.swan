@@ -1,0 +1,93 @@
+<view class="group">
+    <!--to do-->
+     <view class="swiper-wrap">
+        <swiper 
+            indicator-color="rgba(0,0,0,0.30)"
+            indicator-active-color="#fff"
+            duration="{{switchDuration}}"
+            interval="{{autoPlayInterval}}"
+            autoplay="{{switchAutoPlayStatus}}"
+            indicator-dots="{{switchIndicateStatus}}" 
+            vertical="false"
+            circular="true"
+            current="0"
+            bind:change="swiperChange"
+        >
+            <block s-for="item in msg.images">
+                <swiper-item class="{{item.className}}">
+                    <image class="item-img" src="https://img.168jm.cn/{{item}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="group-bd div1">
+        <view class="div-left">
+            <text class="title">{{msg.name}}</text>
+            <text class="text">{{msg.company}}</text>
+        </view>
+        <view class="div-right"  bindtap="form_show" >
+            <text>在线咨询</text>
+        </view>
+    </view>
+    <view class="group-bd div2">
+        <text class="div2-ab">项目信息</text>
+        <view class="div2-content">
+            <view>
+                <text class="list text-qy">加盟区域：<text>全国</text></text>
+                <text class="list text-money">投资金额：<text>{{msg.invest_money}}</text></text>
+            </view>
+            <view>
+                <text class="list text-cityname">品牌起源：<text>{{msg.province}}</text></text>
+                <text class="list text-shopnumber">门店数量：<text>{{msg.shop_number}}</text></text>
+            </view>
+            <view>
+                <text class="list text-publishtime">更新时间：<text>{{msg.publish_time}}</text></text>
+            </view>
+            
+        </view>
+    </view>
+    <view class="group-bd div3">
+        <view class="list" s-for="item in msg.content">
+            <text class="list-title">{{item.title}}</text>
+            <view class="mian">
+                <view class="list_1" s-for="content in item.content">
+                    {{content}}
+                </view>
+                <view s-if="{{item.image}}">
+                    <image class="group-logo" src="{{item.image}}"></image>
+                </view>
+            </view>
+        </view>
+    </view> 
+    <form bindsubmit="formSubmitHandle"  id="form">
+        <view class="form-title">在线留言</view>
+        <view class="btn-area">
+            <view class="section-title">姓名</view>
+            <input name="name" placeholder="请输入您的姓名（如  彭先生）" />
+        </view>
+        <view class="btn-area">
+            <view class="section-title">手机</view>
+            <input name="tel" type="number" maxlength="11" placeholder="请输入您的手机号（如 13888888888）"/>
+        </view>
+        <view class="btn-area">
+            <view class="section-title">留言</view>
+            <input name="msg" placeholder="我对此项目很感兴趣，请来电告知加盟细节。" />
+        </view>
+        <view class="btn">
+            <button class="form-button" form-type="submit">提交留言</button>
+        </view>
+    </form>
+    <view class="group-bd qyxx">
+        <view class="qyxx-title">企业信息</view>
+        <view>
+            <text class="list-text text_2">{{msg.company}}</text>
+        </view>
+        <view>
+            <text class="list-text">注册资金：<text class="text_2">{{msg.fund}}万</text></text>
+            <text class="list-text">所在地区：<text class="text_2">{{msg.company_pro}}</text></text>
+        </view>
+        <view>
+            <text class="list-text">成立时间：<text class="text_2">{{msg.fund_time}}</text></text>
+        </view>
+    </view>
+</view>
